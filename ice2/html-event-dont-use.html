@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			JavaScript &amp; jQuery - Chapter 6: Events - Event Listener and
+			Event Object
+		</title>
+		<link rel="stylesheet" href="style/html-event-dont-use.css" />
+	</head>
+	<body>
+		<h2>JavaScript HTML Events</h2>
+		<!-- uses an HTML event attribute like onclick to assign a function to execute when that event fires -->
+		<h2 id="clickText" onclick="changeText(this)">Click on this text!</h2>
+		<!-- HTML event handler onmouseover -->
+		<div id="mouseOverMe" onmouseover="mOver(this)" onmouseout="mOut(this)">
+			Mouse Over Me
+		</div>
+		<!-- HTML event handler onmousedown -->
+		<div id="clickMe" onmousedown="mDown(this)" onmouseup="mUp(this)">
+			Click Me
+		</div>
+
+		<script src="./scripts/html-event-dont-use.js"></script>
+	</body>
+</html>

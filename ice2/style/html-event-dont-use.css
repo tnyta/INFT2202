@@ -1,0 +1,29 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2#clickText {
+    font-weight: normal;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+div#clickMe {
+    background-color: #588157;
+    width: fit-content;
+    height: 20px;
+    padding: 40px;
+    margin: 10px auto;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+#mouseOverMe {
+    background-color: #8ecae6;
+	width: 200px;
+	height: 20px;
+	padding: 40px;
+	margin: 10px auto;
+    border-radius: 5px;
+    font-size: 24px;
+    text-align: center;
+}
