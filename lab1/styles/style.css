@@ -1,0 +1,76 @@
+/* dynamically footer */
+.footer.navbar.fixed-bottom { 
+  background-color: #3b4249;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px; 
+}
+
+.footer .fab { 
+  padding-right: 20px;
+}
+.navbar.fixed-bottom .container-fluid { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#footer_info { 
+  color: whitesmoke;
+  margin-right: 30px;
+}
+
+.footer_text { 
+  margin-right: 60px;
+  color: hsla(140, 30%, 96%, 0.961);
+  text-decoration: none;
+}
+
+.footer_text:hover {
+  text-shadow: 0 1px 0 #1941e2, 0 -1px 0 #ccc, 1px 0 0 #ccc, -1px 0 0 #ccc;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+}
+
+.nav-link, .navbar-brand {
+  color: white !important;
+}
+
+.nav-link:hover {
+  text-shadow: 0 1px 0 #1941e2, 0 -1px 0 #ccc, 1px 0 0 #ccc, -1px 0 0 #ccc !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath stroke=\'rgba(255, 255, 255, 1)\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' d=\'M4 7h22M4 15h22M4 23h22\'/%3E%3C/svg%3E') !important;
+}
+
+.hero-section {
+  background-image: url('path-to-your-background-image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.social-links {
+  display: inline-block; 
+  margin-left: 450px;
+}
+
+.social-links a {
+  color: rgba(3, 3, 59, 0.659); 
+  margin-right: 10px;
+  font-size: 1.8rem; 
+}
+
+.social-links a:hover {
+  text-shadow: 0 1px 0 #1941e2, 0 -1px 0 #ccc, 1px 0 0 #ccc, -1px 0 0 #ccc !important;
+}
+
+.navbar {
+  background-color: #3b4249 !important; 
+}
+
