@@ -31,6 +31,92 @@ document.addEventListener('DOMContentLoaded', () => {
     addHumanResourcesLink();  // Adds a "Human Resources" link to the navbar
     addFixedBottomNavbar(); // Adds a fixed navbar at the bottom of the page
 });
+
+
+/**
+ * Registration and Login Functionality
+ */
+
+// User class definition
+class User {
+    constructor(firstName, lastName, email, password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+    }
+}
+
+// Document ready function to handle form submissions
+$(document).ready(function() {
+    // Logic for the registration form validation and submission
+    $('#registerForm').submit(function(e) {
+        e.preventDefault(); // Prevent the default form behavior
+
+        // Initialize error message and validation flag
+        let errorMessage = '';
+        let isValid = true;
+
+        // Retrieve form data
+        const firstName = $('#firstName').val().trim();
+        const lastName = $('#lastName').val().trim();
+        const email = $('#email').val().trim();
+        const password = $('#password').val().trim();
+        const confirmPassword = $('#confirmPassword').val().trim();
+
+        // Validate First and Last Name for minimum length
+        if (firstName.length < 2 || lastName.length < 2) {
+            errorMessage += 'First and Last Name must be at least 2 characters long.\n';
+            isValid = false;
+        }
+
+        // Validate Email for minimum length and presence of '@'
+        if (email.length < 8 || !email.includes('@')) {
+            errorMessage += 'Email must be at least 8 characters long and contain an @ symbol.\n';
+            isValid = false;
+        }
+
+        // Validate Passwords for match and minimum length
+        if (password !== confirmPassword) {
+            errorMessage += 'Passwords do not match.\n';
+            isValid = false;
+        }
+        if (password.length < 6) {
+            errorMessage += 'Password must be at least 6 characters long.\n';
+            isValid = false;
+        }
+
+        // Show error message if validation fails
+        if (!isValid) {
+            $('#ErrorMessage').text(errorMessage).show();
+        } else {
+            // Hide the error message
+            $('#ErrorMessage').hide();
+
+            // Create a new User instance and log it to the console
+            const newUser = new User(firstName, lastName, email, password);
+            console.log(newUser);
+
+            // Clear the form fields after successful registration
+            $('#registerForm').trigger('reset');
+        }
+    });
+
+    // Login functionality - Add the user's name to the navbar on login
+    $('#loginForm').submit(function(e) {
+        e.preventDefault(); // Prevent the default form behavior
+        const username = $('#loginUsername').val().trim();
+
+        // insert the username into the navbar
+        $('#usernamePlaceholder').text(username).show();
+        $('#loginLink').hide();
+        $('#logoutLink').show();
+        
+        // window.location.href = 'index.html';
+    });
+
+});
+
 // Function to add the main navigation bar to the page
 function addMainNavbar() {
     // HTML string for the main navbar, including links to different pages
@@ -57,6 +143,20 @@ function addMainNavbar() {
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <span id="usernamePlaceholder" class="navbar-text" style="display: none;"></span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        </li>
+                        <li class="nav-item" style="display: none;">
+                            <a class="nav-link" id="logoutLink" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register.html"><i class="fas fa-user-plus"></i> Register</a>
                         </li>
                     </ul>
                 </div>
@@ -310,8 +410,8 @@ function addFixedBottomNavbar() {
     const currentYear = new Date().getFullYear();
     // HTML string for the fixed bottom navbar
     const bottomNavbarHTML = `
-        <nav class="navbar fixed-bottom navbar-dark bg-dark">
-            <div class="container-fluid">
+        <nav class="navbar fixed-bottom navbar-dark white">
+            <div class="container-fluid-1">
                 <div class="navbar-text">
                     &copy; ${currentYear} - Talent Nyota. All Rights Reserved.
                     <div class="social-links">
@@ -361,3 +461,6 @@ function addHumanResourcesLink() {
     // Insert the new link HTML into the navbar, at the end of the list
     navbar.insertAdjacentHTML('beforeend', hrLinkHTML);
 }
+
+
+

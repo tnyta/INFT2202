@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Include Bootstrap CSS for styling -->
+</head>
+<body id="registerPage" style="background-color: #474f55;">
+<div class="container mt-5">
+    <div class="content-wrapper">
+        <div id="register-page"></div> 
+    </div> 
+        <div class="card-header-register text-center">
+            Register
+        </div>
+        <div class="card-body-register">
+            <p class="text-center">Create your own account. It's free and only takes a minute.</p>
+            <form id="registerForm">
+                <!-- Inside register.html, add this below your form element -->
+                <div id="ErrorMessage" style="display: none;" class="alert alert-danger"></div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="firstName" placeholder="First Name" required minlength="2">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="lastName" placeholder="Last Name" required minlength="2">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" placeholder="Email" required minlength="8">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" placeholder="Password" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- JavaScript Files -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scripts/app.js"></script>
+</body>
+</html>

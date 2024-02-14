@@ -1,6 +1,6 @@
 /* dynamically footer */
 .footer.navbar.fixed-bottom { 
-  background-color: #3b4249;
+  background-color: #f2f4f5;
   display: flex;
   justify-content: space-between;
   padding: 6px 10px; 
@@ -38,7 +38,8 @@
 }
 
 .nav-link, .navbar-brand {
-  color: white !important;
+  color: black !important;
+  font-size: 15px!important; 
 }
 
 .nav-link:hover {
@@ -63,14 +64,92 @@
 .social-links a {
   color: rgba(3, 3, 59, 0.659); 
   margin-right: 10px;
-  font-size: 1.8rem; 
+  font-size: 1.0rem; 
 }
 
 .social-links a:hover {
-  text-shadow: 0 1px 0 #1941e2, 0 -1px 0 #ccc, 1px 0 0 #ccc, -1px 0 0 #ccc !important;
+  text-shadow: 0 1px 0 #8393d2, 0 -1px 0 #ccc, 1px 0 0 #ccc, -1px 0 0 #ccc !important;
 }
 
-.navbar {
-  background-color: #3b4249 !important; 
+
+
+.half-width-card {
+  max-width: 50%; 
+  margin: 0 auto; 
+  padding: 20px;
+  box-shadow: 0 4px 8px #474f55;
+  background-color: #474f55; 
 }
+
+.card-body-register {
+  max-width: 50%; 
+  margin: 0 auto; 
+  padding: 20px;
+  box-shadow: 0 4px 8px #474f55;
+  background-color: #474f55; 
+}
+
+.card-header-register {
+  max-width: 50%; 
+  margin: 0 auto; 
+  padding: 20px;
+  box-shadow: 0 4px 8px #474f55;
+  background-color: #474f55; 
+}
+
+/* Optional: Adjust the form input and button sizes */
+#loginForm .form-control, #loginForm .btn {
+  max-width: 400px; /* Set a max-width for form controls and button if they are too wide */
+  
+  margin: 7px auto; /* Center them within the card */
+}
+
+
+.card-register {
+  max-width: 50%; 
+  margin: 0 auto; 
+  padding: 20px; 
+}
+
+.content-wrapper {
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 1px; 
+  box-shadow: 0 4px 8px #e5ebef; 
+  background-color: #474f55; 
+}
+
+
+@media (max-width: 1200px) {
+  .content-wrapper {
+    max-width: 10%;
+  }
+}
+
+.fixed-bottom {
+  right: inherit;
+  bottom: 0;
+  left: auto;
+  z-index: 1030;
+}
+
+
+.social-links {
+  display: inline-block;
+  margin-left: 150px;
+  font-size: 1px;
+  height: 0px;
+}
+
+
+.navbar-text {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #000;
+}
+
+
+
+
+
 
