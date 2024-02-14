@@ -2,7 +2,7 @@
  * app.js
  * Author: Talent Nyota
  * StudentID: 100761242
- * Date Completed: 2024-01-27
+ * Date Modified: 2024-02-13
  * Description: This script handles the dynamic content injection for the home, product, services, and about us pages. It also manipulates the DOM to change navbar links and adds a fixed bottom navbar. A contact form submission with redirection is implemented as well.
  */
 
