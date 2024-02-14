@@ -463,4 +463,78 @@ function addHumanResourcesLink() {
 }
 
 
+<<<<<<< HEAD
 
+=======
+/**
+ * Registration and Login Functionality
+ */
+
+// User class definition
+class User {
+    constructor(firstName, lastName, username, email, password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+}
+
+// Document ready function to handle form submissions
+$(document).ready(function() {
+    // Handle login form submission
+    $('#loginForm').submit(function(e) {
+        e.preventDefault();
+        const username = $('#loginUsername').val();
+        // Place logic here to handle user login, e.g. checking credentials and handling sessions
+
+        // For demonstration purposes, this code assumes login is successful
+        // Insert username in navbar
+        // You should replace 'username' with the ID or class of the actual element in your HTML
+        $('<span class="navbar-text">' + username + '</span>').insertBefore('#loginLogoutLink');
+    });
+
+    // Handle register form submission
+    $('#registerForm').submit(function(e) {
+        e.preventDefault();
+        const firstName = $('#firstName').val();
+        const lastName = $('#lastName').val();
+        const email = $('#email').val();
+        const password = $('#password').val();
+        const confirmPassword = $('#confirmPassword').val();
+
+        let errorMessage = '';
+
+        // Validate First and Last Name
+        if (firstName.length < 2 || lastName.length < 2) {
+            errorMessage += 'First and Last Name must be at least 2 characters. ';
+        }
+
+        // Validate Email
+        if (email.length < 8 || !email.includes('@')) {
+            errorMessage += 'Email must be at least 8 characters long and contain an @ symbol. ';
+        }
+
+        // Validate Password
+        if (password.length < 6) {
+            errorMessage += 'Password must be at least 6 characters long. ';
+        }
+
+        // Check if passwords match
+        if (password !== confirmPassword) {
+            errorMessage += 'Passwords do not match. ';
+        }
+
+        // Display error message if any validation fails
+        if (errorMessage) {
+            $('#ErrorMessage').show().text(errorMessage);
+        } else {
+            $('#ErrorMessage').hide();
+            const user = new User(firstName, lastName, email.split('@')[0], email, password);
+            console.log(user);
+            $('#registerForm').trigger('reset'); // Clear form after successful registration
+        }
+    });
+});
+>>>>>>> 99e0f4857e6d0b661ed3513f57b25858e5cd2ffe
