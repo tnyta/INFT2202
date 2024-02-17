@@ -111,20 +111,30 @@
   padding: 20px; 
 }
 
+/* Base styles */
 .content-wrapper {
-  max-width: 1200px; 
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 1px; 
-  box-shadow: 0 4px 8px #e5ebef; 
-  background-color: #474f55; 
+  padding: 1px;
+  box-shadow: 0 4px 8px #e5ebef;
+  background-color: #474f55;
 }
 
-
+/* Media query for screens smaller than 1200px wide */
 @media (max-width: 1200px) {
   .content-wrapper {
-    max-width: 10%;
+    /* Use a percentage width that allows for some margin on the sides */
+    max-width: 100%;
+    padding: 10px; /* Adjust padding to ensure content fits well */
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+  }
+  .content-wrapper > #product-content {
+    /* Adjust styles for the content here, for example: */
+    /* Adjust font size, margins, and other properties as necessary */
+    font-size: smaller;
   }
 }
+
 
 .fixed-bottom {
   right: inherit;
