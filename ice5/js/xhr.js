@@ -1,5 +1,5 @@
 document.getElementById("getXhr") 
-    .addEventListener('click', e => {
+    .addEventListener('click', function() {
         makeXhr(); 
     });
 
@@ -16,13 +16,22 @@ function makeXhr() {
         }
     };
 
-    request.open('GET', './products.json', true);
+    request.open('GET', 'js/products.json', true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.send();
 }
 
 function handleSuccess(res) {
+
+    // Log the raw JSON text
+    console.log('Raw JSON response:', res.responseText);
+
+    // Parse the JSON text to an object
     const data = JSON.parse(res.responseText);
+
+    // Log the parsed data
+    console.log('Parsed data:', data);
+
     const container = document.getElementById('xhr-table');
     container.innerHTML = ''; // Clear previous content
 

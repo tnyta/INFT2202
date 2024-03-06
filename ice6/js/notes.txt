@@ -1,0 +1,61 @@
+document.getElementById("getXhr").addEventListener('click', function() {
+    makeXhr();
+});
+
+function makeXhr() {
+    $.ajax({
+        url: 'js/products.json',
+        type: 'GET',
+        dataType: 'json'
+    })
+    .done(function(data) {
+        // On success, handle the data
+        console.log('Success:', data);
+        handleSuccess(data);
+    })
+    .fail(function(jqXHR, textStatus, errorThrown) {
+        // On failure, handle the error
+        console.error('Error:', textStatus, errorThrown);
+        handleError(jqXHR);
+    })
+    .always(function() {
+        // Code to execute regardless of success or failure
+        console.log('Request completed.');
+    });
+}
+
+function handleSuccess(data) {
+    console.log('Parsed data:', data);
+
+    const container = document.getElementById('xhr-table');
+    container.innerHTML = ''; 
+
+    const table = document.createElement('table');
+    table.classList.add('table', 'table-striped');
+
+    // Create table header
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    let thName = document.createElement("th");
+    let thPrice = document.createElement("th");
+    thName.textContent = "Product Name";
+    thPrice.textContent = "Price";
+    row.appendChild(thName);
+    row.appendChild(thPrice);
+
+    // Populate table rows
+    data.forEach(item => {
+        let row = table.insertRow();
+        let name = row.insertCell(0);
+        let price = row.insertCell(1);
+        name.textContent = item.name;
+        price.textContent = item.price;
+    });
+
+    container.appendChild(table);
+}
+
+function handleError(jqXHR) {
+    console.error('Failed to fetch:', jqXHR);
+    alert('Failed to fetch data!');
+}
