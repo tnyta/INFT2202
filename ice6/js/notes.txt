@@ -1,3 +1,27 @@
+npm install bootstrap
+npm start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.getElementById("getXhr").addEventListener('click', function() {
     makeXhr();
 });
